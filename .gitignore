@@ -3,3 +3,6 @@ api_keys.txt
 
 # pycache
 __pycache__
+
+# vscode settings
+.vscode
