@@ -1,2 +1,3 @@
 def convert_json_to_html():
-    print("lol")
+    # Get json file and convert to readable chrome bookmark html file
+    print("")
