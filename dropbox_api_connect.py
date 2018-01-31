@@ -10,6 +10,8 @@ class Dropbox_api:
         self.dbx = dropbox.Dropbox(api_file_path)
         if(self.dbx.users_get_current_account() is not None):
             print("Successfully connected to dropbox api!")
+        else:
+            print("Failed to connect to the dropbox api!")
 
     def print_all_contents_directory(self):
         for entry in self.dbx.files_list_folder('').entries:

@@ -17,6 +17,7 @@ def main():
     file_path = r'''C:\\Users\\Harry\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1\\Bookmarks'''
     now = datetime.datetime.now()
     new_file_name = '_' + str(now.day) + '_' + str(now.month) + '_' + str(now.year)
+    new_file_name_html = 'bookmarks_' + new_file_name + '.html'
     dest_path_local = r'''C:\Users\Harry\Documents\Chrome Bookmarks\\''' + new_file_name
     dest_path = r'''/''' + new_file_name
     read_data = read_file(file_path)
