@@ -1,14 +1,14 @@
 #!C:\Users\Harry\AppData\Local\Programs\Python\Python35-32\python.exe.............
 import datetime
-import json_parser_to_html
-from dropbox_api_connect import Dropbox_api
+from parser_json_to_html import Parser_json_to_html
+from dropbox_api_client import Dropbox_api_client
 
-def read_file(file_path):
+def __read_file(file_path):
     with open(file_path, 'r', encoding="utf8") as f:
         read_data = f.read()
     return read_data
 
-def write_new_file(dest_path_local, read_data):
+def __write_new_file(dest_path_local, read_data):
      with open(dest_path_local, 'w', encoding="utf8") as new_f:
             new_f.write(read_data)
 
@@ -20,11 +20,11 @@ def main():
     new_file_name_html = 'bookmarks_' + new_file_name + '.html'
     dest_path_local = r'''C:\Users\Harry\Documents\Chrome Bookmarks\\''' + new_file_name
     dest_path = r'''/''' + new_file_name
-    read_data = read_file(file_path)
-    write_new_file(dest_path_local, read_data)
+    read_data = __read_file(file_path)
+    __write_new_file(dest_path_local, read_data)
 
     # establish api connection and upload the backup to dropbox
-    dropbox_api = Dropbox_api()
+    dropbox_api = Dropbox_api_client()
     dropbox_api.upload_file(dest_path_local, dest_path)
 
 
