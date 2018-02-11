@@ -23,6 +23,9 @@ def main():
     read_data = __read_file(file_path)
     __write_new_file(dest_path_local, read_data)
 
+    # parse json and convert to html
+    parser = Parser_json_to_html()
+
     # establish api connection and upload the backup to dropbox
     dropbox_api = Dropbox_api_client()
     dropbox_api.upload_file(dest_path_local, dest_path)

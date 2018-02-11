@@ -143,14 +143,14 @@ class Parser_json_to_html:
         node = self.__get_json_data(file_path)
 
         if node['roots']['bookmark_bar']:
-            self.output_html_file = "".join((self.output_html_file, '<DT><H3 ADD_DATE="{date}" LAST_MODIFIED="{last_modified}" PERSONAL_TOOLBAR="{boolean}">{name}</H3>\n<DL><p>\n'.format(
+            """self.output_html_file = "".join((self.output_html_file, '<DT><H3 ADD_DATE="{date}" LAST_MODIFIED="{last_modified}" PERSONAL_TOOLBAR="{boolean}">{name}</H3>\n<DL><p>\n'.format(
                 name = node['roots']['bookmark_bar']['name'], 
                 date = self.__convert_chrometimestamp_to_unixtimestamp(node['roots']['bookmark_bar']['date_added']),
                 last_modified = self.__convert_chrometimestamp_to_unixtimestamp(node['roots']['bookmark_bar']['date_modified']),
                 boolean = "true"
-                )))
+                )))"""
             self.__parse_json_to_html_helper(node['roots']['bookmark_bar']['children'])
-            self.__close_DL_p_tag()
+            #self.__close_DL_p_tag()
 
         if node['roots']['other']:
             self.__create_folder_node(
