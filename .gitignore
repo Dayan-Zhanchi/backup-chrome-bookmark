@@ -8,4 +8,5 @@ __pycache__
 .vscode
 
 # test outputs
-test.txt
+output.html
+test2.txt
