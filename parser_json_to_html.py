@@ -22,10 +22,6 @@ class Parser_json_to_html:
         <H1>Bookmarks</H1>
         <DL><p>\n""" 
 
-    def __write_new_file(self, dest_path_local, read_data):
-        with open(dest_path_local, 'w', encoding="utf8") as new_f:
-                new_f.write(read_data)
-
     def __get_json_data(self, file_path):
         with open(file_path, 'r', encoding='utf8') as json_data:
             data = json.load(json_data)
@@ -112,8 +108,6 @@ class Parser_json_to_html:
                     )))
 
     def __parse_json_to_html_helper(self, json_data):
-        #self.__write_new_file(dest_file_path_txt, json.dumps(json_data['roots']['bookmark_bar'], indent = 4))
-        #self.__write_new_file(dest_file_path_html, json.dumps(json_data['roots']['bookmark_bar'], indent = 4))
         for node in json_data:
             if 'url' in node:
                 self.__create_url_node(
@@ -139,7 +133,7 @@ class Parser_json_to_html:
                 self.__parse_json_to_html_helper(node['children'])
                 self.__close_DL_p_tag()
                 
-    def parse_json_to_html(self, file_path, dest_file_path_txt, dest_file_path_html):
+    def parse_json_to_html(self, file_path):
         node = self.__get_json_data(file_path)
 
         if node['roots']['bookmark_bar']:
