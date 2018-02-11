@@ -6,3 +6,9 @@ __pycache__
 
 # vscode settings
 .vscode
+
+# test outputs & files
+test.py
+output.html
+test2.txt
+_11_2_2018

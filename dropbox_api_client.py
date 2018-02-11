@@ -2,7 +2,7 @@
 # Include the Dropbox SDK
 import dropbox
 
-class Dropbox_api:
+class Dropbox_api_client:
     # Establish connection with the dropbox api
     def __init__(self):
         with open('api_keys.txt','r') as f:
