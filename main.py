@@ -13,7 +13,7 @@ def __write_new_file(dest_path_local, read_data):
             new_f.write(read_data)
 
 def main():
-    # read google chrome bookmarks and make a backup by creating a new file somewhere else in the computer
+    # set the file and destination paths
     file_path = r'''C:\\Users\\Harry\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1\\Bookmarks'''
     now = datetime.datetime.now()
     new_file_name_json = '_' + str(now.day) + '_' + str(now.month) + '_' + str(now.year)
@@ -22,6 +22,8 @@ def main():
     dest_path_local_html = r'''C:\Users\Harry\Documents\Chrome Bookmarks\\''' + new_file_name_html
     dropbox_dest_path_json = r'''/''' + new_file_name_json
     dropbox_dest_path_html = r'''/''' + new_file_name_html
+
+    # read google chrome bookmarks and make a backup by creating a new file somewhere else in the computer
     json_data = __read_file(file_path)
     __write_new_file(dest_path_local_json, json_data)
 

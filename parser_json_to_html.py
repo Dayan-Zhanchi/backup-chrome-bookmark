@@ -108,6 +108,7 @@ class Parser_json_to_html:
                     )))
 
     def __parse_json_to_html_helper(self, json_data):
+        # helper method is for iterating through the children and creating html elements(nodes)
         for node in json_data:
             if 'url' in node:
                 self.__create_url_node(
@@ -135,6 +136,8 @@ class Parser_json_to_html:
                 
     def parse_json_to_html(self, file_path):
         node = self.__get_json_data(file_path)
+
+        # parse the different main folders in root
 
         if node['roots']['bookmark_bar']:
             """self.output_html_file = "".join((self.output_html_file, '<DT><H3 ADD_DATE="{date}" LAST_MODIFIED="{last_modified}" PERSONAL_TOOLBAR="{boolean}">{name}</H3>\n<DL><p>\n'.format(
